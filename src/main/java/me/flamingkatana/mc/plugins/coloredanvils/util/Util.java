@@ -22,12 +22,8 @@ public class Util {
         return version;
     }
 
-    public static String stripChars(String str, char... chars) {
-        String strippedStr = str;
-        for (char c : chars) {
-            strippedStr = str.replaceAll(String.valueOf(c), "");
-        }
-        return strippedStr;
+    public static String stripColorsAndFormatting(String str) {
+        return str.replaceAll("[&§x][0-9a-fA-Fk-orK-OR]", "");
     }
 
     public static String doubleCharacters(String str) {

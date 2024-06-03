@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static me.flamingkatana.mc.plugins.coloredanvils.util.Util.getServerVersionAsInt;
-import static me.flamingkatana.mc.plugins.coloredanvils.util.Util.stripChars;
+import static me.flamingkatana.mc.plugins.coloredanvils.util.Util.stripColorsAndFormatting;
 
 public class ItemColorTranslator {
 
@@ -101,8 +101,7 @@ public class ItemColorTranslator {
     }
 
     private boolean doesOutputNameMatchInputName(String outputName, String inputName) {
-        return stripChars(outputName, AnvilConstants.UNTRANSLATED_COLOR_CHAR, ChatColor.COLOR_CHAR)
-                .equals(stripChars(inputName, ChatColor.COLOR_CHAR));
+        return stripColorsAndFormatting(outputName).equals(stripColorsAndFormatting(inputName));
     }
 
 }
